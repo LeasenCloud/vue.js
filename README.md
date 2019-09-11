@@ -15,3 +15,5 @@ oficina@malla:/var/www/vue.js$ git pull
 Already up-to-date.
 
 Hemos creado la rama desarrollo desde atom
+Hemos hecho pull reques desde GitHub
+Hemos puesto "hola"
