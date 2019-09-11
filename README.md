@@ -13,3 +13,5 @@ Already up-to-date.
 oficina@malla:/var/www/vue.js$ git push
 oficina@malla:/var/www/vue.js$ git pull
 Already up-to-date.
+
+Hemos creado la rama desarrollo desde atom
