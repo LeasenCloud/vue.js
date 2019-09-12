@@ -1,6 +1,7 @@
 Rama para desarrollos Golang
 Se trabaja desde ATOM y se PUSH a GitHub para
-luego desde "malla" hacerlo pull en la rama de "desarrollo":
+luego desde "malla" hacerlo pull en la rama de "desarrollo"
+de "malla":
 
 oficina@malla:/var/www/vue.js$ git branch -a
 * desarrollo
