@@ -23,3 +23,5 @@ para ello tuve que hacer:
 u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "Your Name"
 u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "gongolin"
 u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.email "mdelrosal@leasencloud.com"
+
+Hemos actualizado rama desarrollo, pero no Golang
