@@ -21,6 +21,6 @@ con la "master"
 
 Commit desde "gongolin"
 para ello tuve que hacer:
-u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "Your Name"
-u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "gongolin"
-u020531@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.email "mdelrosal@leasencloud.com"
+u02@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "Your Name"
+u02@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.name "gongolin"
+u02@gongolin:~/Documentos/0Programar/LeasenCloud/vue.js$ git config --global user.email "md@l.com"
