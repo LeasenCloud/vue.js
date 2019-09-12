@@ -1,1 +1,1 @@
-Rama dedicada al curso de Golang
+Rama dedicada al curso de Golang de Udemy
