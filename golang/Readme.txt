@@ -1,1 +1,1 @@
-Rama dedicada a Golang
+Rama para desarrollos Golang
