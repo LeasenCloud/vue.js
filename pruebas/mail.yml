@@ -1,0 +1,113 @@
+---
+- name: Disable SELINUX
+  selinux:
+    state: disabled
+
+- name: Disable Firewalld
+  service:
+    name: firewalld
+    state: stopped
+    enabled: no
+
+- name: Set DNS servers
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+  when: base_dns_servers is defined
+
+- name: Bastiona
+  include_tasks: bastiona.yml
+  when:
+    - bastiona is defined
+    - bastiona == 'yes'
+
+- name: Get files repositories for delete
+  find:
+    paths: /etc/yum.repos.d
+    patterns: '*.repo'
+  register: repo_rm
+
+- name: Remove old repositories
+  file:
+    path: "{{ item.path }}"
+    state: absent
+  with_items: "{{ repo_rm.files }}"
+
+- name: Add yum repositories
+  yum_repository:
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    gpgcheck: no
+    enabled: "{{ item.enabled }}"
+    file: "{{ item.file }}"
+  with_items: "{{ base_repos | default() }}"
+  when:
+    - item.distribution == ansible_facts.distribution
+    - item.release in ansible_facts.distribution_version
+
+- name: Install basic packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - 'ntpdate'
+    - 'strace'
+    - 'telnet'
+    - 'rsync'
+    - 'lsof'
+    - 'ntp'
+    - 'vim'
+    - 'nc'
+
+- name: Add servers to config in EL7
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf owner=root group=root mode=0644
+
+- name: Ensure ntp is started
+  service: name=ntpd state=started enabled=yes
+
+- name: 'Create group accounts'
+  group:
+    name: "{{ item.name }}"
+    gid: "{{ item.gid }}"
+    state: present
+  with_items: "{{ sys_grps }}"
+  when:
+    - grps is defined
+    - grps_def is defined
+    - sys_grps is defined
+    - item.name in grps or item.name in grps_def
+
+- name: 'Create user accounts'
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    group: "{{ item.group }}"
+    groups: "{{ item.groups }}"
+    password: "{{ item.pass }}"
+    createhome: yes
+    shell: /bin/bash
+    state: present
+  with_items: "{{ sys_usrs }}"
+  when
+    - usrs is defined
+    - usrs_def is defined
+    - sys_usrs is defined
+    - item.name in usrs or item.name in usrs_def
+
+- name: chage expiry passwd
+  command: "chage -m 0 -M 99999 -I -1 -E -1 {{ item.name }}"
+  with_items: "{{ sys_usrs }}"
+  when:
+    - usrs is defined
+    - usrs_def is defined
+    - sys_usrs is defined
+    - item.name in usrs or item.name in usrs_def
+
+- name: Add sudoers BMC Discovery config file
+  copy:
+    src: 'files/bmc_discovery'
+    dest: '/etc/sudoers.d/bmc_discovery'
+    owner: 'root'
+    group: 'root'
+    mode: 0440
