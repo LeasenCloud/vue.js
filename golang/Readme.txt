@@ -16,3 +16,7 @@ From https://github.com/LeasenCloud/vue.js
  * branch            golang     -> FETCH_HEAD
    c7a8c2d..bb0b496  golang     -> origin/golang
 Already up-to-date.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 427f77ba41660cc9da18c2867af9596144042fc0
