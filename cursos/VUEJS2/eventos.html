@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Eventos</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="eventos">
+      21.Manejar eventos
+      <button v-on:click="sumarUno">Sumar uno</button>
+      <button v-on:mouseEnter="restarUno">Restar uno</button>
+      <br>
+      {{ contador }}
+      <hr>
+      22.Pasar argumentos
+      <button v-on:click="alerta('Esta es la alerta')">Mostrar alerta</button>
+      <br>
+      <hr>
+      23.Usar el objeto event - 24.Usar más de un evento
+      <div style="height:100px"
+      v-on:mousemove="mostrarUbicacion"
+      v-on:click="sumar"
+      v-on:click="sumarDos(2)"
+      v-on:click="contador++"
+      ></div>
+      x: {{x}},y:{{y}}, contador: {{contadorUno}}, contador: {{contadorDos}}
+      </div>
+      <hr>
+    <script src="eventos.js"></script>
+  </body>
+</html>
