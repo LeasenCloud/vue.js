@@ -1,1 +1,7 @@
 Curso Tres
+- Python es un lenguaje de programación multiparadigma.
+- Es multiplataforma.
+- Es muy sencillo de aprender ya que es un lenguaje simple y minimalista.
+- Es interpretado.
+- Usa tipado dinámico.
+- Actualmente ocupa el puesto número 4 del índice TIOBE.
