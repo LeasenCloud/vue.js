@@ -1,1 +1,38 @@
 Curso Uno
+
+
+* Leccion 8:  imagenes de GO:
+declaracion o statement x=2+2
+expresion  2+2
+operando  2
+opearador  +
+keywords --> palabras claves
+
+* Leccion 10
+El tipado de Golang es estatico. A diferencia de otros
+lenguajes como Python, Ruby o JavaScripts que son dinamicos.
+Esto quiere decir que el tipo de una variable no cambia
+durane toda la vida del programa, lo que repercute
+en una mayor velocidad al no tener que estar chequeando
+el tipo.
+
+* Lección 11: Valor 0
+Declarando la variable con el identificados z de tipo int:
+var z int
+Valor Cero
+	Entendiendo el valor cero
+		false para booleanos
+		0 para integers
+		0.0 para floats
+		"" para strings
+		nil para
+			pointers
+			funciones
+			interfaces
+			slices
+			channels
+			maps
+Usar el operador de declaración corta de variables mientras más sea posible
+Usar var para
+	Valor cero
+	package scope
