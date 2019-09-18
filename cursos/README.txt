@@ -1,4 +1,4 @@
-Rama dedicada al curso de Golang y Vuejs2 de Udemy
+Rama dedicada al curso de Vuejs2, Golang y  Python de Udemy
 Se trabaja desde ATOM y se PUSH a GitHub para
 luego desde "malla" hacerlo pull en la rama de "desarrollo"
 de "malla":
