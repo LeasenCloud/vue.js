@@ -1,5 +1,8 @@
 Curso Tres
 - Python es un lenguaje de programación multiparadigma.
+  Multiparadigma significa que puede utilizarse para programar de
+  diferentes maneras: programacion orientada a objeto, iterativa, o
+  funcional  
 - Es multiplataforma.
 - Es muy sencillo de aprender ya que es un lenguaje simple y minimalista.
 - Es interpretado.
