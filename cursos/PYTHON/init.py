@@ -63,3 +63,49 @@ a = a + 5  # suma normal
 # o
 a += 5  # suma en asignacion
 a **= 2  # potencia en asignacion
+
+# Salidas de datos por consola:
+nombre = "Alejandro"
+edad = 34
+print(nombre)
+print("Hola ", nombre, " tienes ", edad, "de edad.")
+print("Hola {} tienes {} de edad".format(nombre, edad))
+# print(f"Hola {nombre}")  # Esto es para la version 3 de python
+
+# Entrada de datos por consola:
+nombre_entrada = input("Digite su nombre: ")
+print("Hola {}". format(nombre_entrada))
+print("Hola {}". format(nombre_entrada+5))
+# Lo correcto al utilizar numeros es pasar la funcion a entero
+edad_entrada = int(input("Digite su edad: "))
+print("Hola {}". format(edad_entrada+10))
+
+# Funciones integradas:
+# str --> cadena - float --> flotante - bin --> binario - hex --> hexadecimal
+n = bin(10)  # El binario del entero 10
+print('binario de "10"', n)
+str = str(10.98)  # Convertimos numeros en cadena
+print("cadena de '10.98'", str)
+# hexadecimal
+n = hex(10)  # El hexadecimal del entero 10
+print("hexadecimal de 10", n)
+# Binario a entero
+n = int("0b1010", base=2)
+print("entero de un binario:  0b1010", n)
+# Hexadecimal a entero:
+n = int("0xa", base=16)
+print("Hexadecimal a entero", n)
+# entero a hexadecimal a entero:
+n = hex(10)
+print("entero 10 a hexadecimal", n)
+# Valor absoluto:
+n = abs(-8)
+print("absoluto:", n)
+# redondeo:
+n = round(5.4)
+print("redondeo", n)
+n = round(5.6)
+print("redondeo", n)
+# Contador letras y numeros:
+n = len("Alejandro111")
+print("Contador de Alejandro111", n)
