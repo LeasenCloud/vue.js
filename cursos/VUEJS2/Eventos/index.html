@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eventos</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="eventos">
+    <div style="height:300px;border:1px solid blue"
+      v-on:mousemove="mostrarUbicacion"
+      v-on:click.once="sumar(3)"
+    >
+    <div style="height:30px;border:1px solid red"
+      v-on:mousemove.stop
+    ></div>
+    </div>
+    x: {{x}}, y: {{y}}, contador: {{contador}}
+    <input type="text" @keyup.alt.67="sumar(1)">
+    // alt.67 = alt-c
+  </div>
+  <script src="vue.js"></script>
+</body>
+</html>
